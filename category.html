@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Cafe - Category</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <header>
+        <h1>SMART CAFE</h1>
+        <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="category.html">Category</a></li>
+                <li><a href="cart.html">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    
+
+    <section class="container">
+        <h2>Our Menu Categories</h2>
+        <div id="categories-container" class="categories-container"></div>
+         <div id="items-container" style="display: none;">
+    <h2 id="category-title"></h2>
+    <div id="menu-container" class="menu-grid"></div>
+</div>
+    </section>
+
+    <button id="view-cart-button" onclick="location.href='cart.html'">View Cart</button>
+
+    <footer>
+        <p>© 2024 Smart Cafe. All rights reserved.</p>
+    </footer>
+
+    <script src="app.js"></script>
+    <script src="tracking.js"></script>
+</body>
+</html>
+

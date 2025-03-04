@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Cafe - Cart</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <header>
+        <h1>SMART CAFE</h1>
+        <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="category.html">Category</a></li>
+                <li><a href="cart.html">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="message-container" style="display: none; position: fixed; top: 20px; left: 50%; transform: translateX(-50%); background: #fff; color: #333; border: 1px solid #ccc; padding: 10px; border-radius: 5px; z-index: 1000;">
+    </div>
+        
+
+    <div id="info-drawer" class="info-drawer hidden">
+        <h3>Fill Your Details</h3>
+        <form id="info-form">
+            <label for="customer-name">Name:</label>
+            <input type="text" id="customer-name" placeholder="Enter your name" required>
+            
+            <label for="mobile">Mobile:</label>
+            <input type="tel" id="mobile" placeholder="Enter your 10-digit mobile number" required>
+            
+            <button type="button" id="submit-info">Submit</button>
+            <button type="button" id="cancel-info">Cancel</button>
+        </form>
+    </div>
+    
+    
+
+    <section id="cart" class="container">
+        <h2>Your Cart</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody id="cart-items">
+                <!-- Cart items will be added here -->
+            </tbody>
+        </table>
+        <h3>Total: <span id="total-price">₹0</span></h3>
+        <button id="place-order-button" >Place Order</button>
+    </section>
+
+    <!-- Tracking Button (initially hidden) -->
+<!-- <button id="tracking-button" style="display: none;" class="floating-button">Order Tracking</button> -->
+
+    <footer>
+        <p>© 2024 Smart Cafe. All rights reserved.</p>
+    </footer>
+
+   
+    <script src="cart.js"></script>
+    <script src="tracking.js"></script>
+
+</body>
+</html>
+
+
