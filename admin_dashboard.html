@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Cafe Admin</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <header class="admin-header">
+        <h1>Smart Cafe Admin</h1>
+        <button id="logoutBtn" class="logout-btn hidden">Logout</button>
+    </header>
+    
+    <!-- Reset Orders Button (Initially Hidden) -->
+    <button id="reset-orders-button" class="reset-btn hidden">Reset Orders</button>
+
+    <main class="admin-container">
+        <!-- Welcome Section -->
+        <section class="login-section" id="welcomeSection">
+            <h2>Welcome, Admin</h2>
+        </section>
+
+        <!-- Login Drawer -->
+        <div class="login-drawer hidden" id="loginDrawer">
+            <form id="loginForm" onsubmit="adminLogin(event)">
+                <h3>Admin Login</h3>
+                <input type="text" id="admin-id" placeholder="Enter Admin ID" required>
+                <input type="password" id="admin-password" placeholder="Enter Password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+
+        <!-- Admin Dashboard -->
+        <div class="dashboard hidden" id="adminDashboard">
+            <h3>Admin Dashboard</h3>
+            <section id="order-section" class="order-section">
+                <h3>Manage Orders</h3>
+            </section>
+            <section class="tracking-section">
+                <h3>Order Tracking</h3>
+                <div class="tracking-info">
+                    <p>Order #001 - In Progress</p>
+                    <button onclick="updateTracking()">Update Status</button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="admin-footer">© 2024 Smart Cafe - Admin Panel</footer>
+
+    <!-- JavaScript to Show Reset Button Only When Admin is Logged In -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const resetOrdersButton = document.getElementById('reset-orders-button');
+
+            if (sessionStorage.getItem('adminLoggedIn') === 'true') {
+                resetOrdersButton.classList.remove('hidden');
+            }
+        });
+    </script>
+
+    <script src="admin_dashboard.js"></script>
+</body>
+</html>
